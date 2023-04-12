@@ -1,0 +1,91 @@
+:root {
+    --buRed:#A50000;
+    --buDarkRed:#550000;
+    --buLightRed: #BB0000;
+    --svgBackgroundSize : 225px;
+    --svgSize: 175px;
+}
+
+/* button styling ... needs some tweaking*/
+a:hover {
+    color: purple;
+}
+
+.center {
+    border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  height: 200px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.center button {
+width: 100px;
+height: 100px;
+background-color: #A50000;
+vertical-align: center;
+
+}
+button:hover {
+color:white;
+}
+
+/* navbar specific */
+.toplogo {
+    height: 40px;
+    margin: 10px 10px 10px 10px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+#navbarSupportedContent {
+    font-size: 24px;
+}
+
+.nav-link.dropdown-toggle {
+    color: white !important;
+}
+
+ul.navbar-nav {
+    align-items: center;
+}
+
+.nav-item.dropdown {
+    margin-right: 50px;
+}
+
+a#logout {
+    background-color: var(--buDarkRed);
+    color: white;
+}
+
+a.dropdown-item {
+    text-align: center;
+    font-size: 14pt;
+    padding: 12px 0;
+}
+
+a.dropdown-item:hover {
+    color: white;
+    background-color: var(--buDarkRed);
+}
+
+div.dropdown-menu {
+    min-width: 0;
+    width: 100%;
+}
+/* end navbar specific */
+
+
+
+
