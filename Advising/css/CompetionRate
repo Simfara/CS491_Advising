@@ -1,0 +1,30 @@
+//work in progress for the completion rate function:
+
+       const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+        const progress = document.querySelector('.progress');
+        const checkCompletionBtn = document.getElementById('checkCompletionBtn');
+
+        checkCompletionBtn.addEventListener('click', () => {
+        const completedCount = countCheckedCheckboxes('.checklist');
+        const percentage = (completedCount / checkboxes.length) * 100;
+        alert(`Number of completed items: ${completedCount}\nPercentage completed: ${percentage}%`);
+        });
+
+        function countCheckedCheckboxes(container) {
+        const checkboxes = document.querySelectorAll(`${container} input[type="checkbox"]`);
+        let checkedCount = 0;
+        checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+        checkedCount++;
+        }
+        });
+        return checkedCount;
+        }
+
+        checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+        const completedCount = countCheckedCheckboxes('.checklist');
+        const percentage = (completedCount / checkboxes.length) * 100;
+        progress.style.width = `${percentage}%`;
+        });
+        });

@@ -9,8 +9,111 @@
         <link rel="stylesheet" href="styles.css">
         <title>Undergrad Advising</title>
         <h1>Computer Game Technology Minor</h1>
+        <style>
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		li {
+			margin-bottom: 10px;
+		}
+		label {
+			display: inline-block;
+			margin-right: 10px;
+		}
+		input[type="checkbox"] {
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+		.checked {
+			text-decoration: line-through;
+			color: #999;
+		}
+	</style>
     </head>
 <body>
-       
+<h2>Course Completion Checklist</h2>
+
+<div class="course-info">
+    <div id="course-details">
+        <p>Please select a minor to view its details.</p>
+    </div>
+    <select id="course-select" onchange="showCourseInfo()">
+        <option value="">Select a minor:</option>
+        <option value="html">Computer Game Technology</option>
+        <option value="css">Computer Science and Information Systems</option>
+        <option value="javascript">Data Science</option>
+    </select>
+
+
+</div>
+
+<form>
+    <ul>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CS101">
+                CS 101: Introduction to Programming or equivalent - 4 hrs.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CS102">
+                CS 102: Data Structures or equivalent - 3 hrs.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CS140">
+                CS 140: Advanced Programming Concepts and Languages or equivalent - 3 hrs.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CIS350">
+                CIS 350: Foundations of Game Programming or I M 289 Game Production I or equivalent - 3 hrs.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CIS450">
+                CIS 450: Game Programming Design Patterns - 3 hrs.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" name="checklist" value="CIS459">
+                CIS 459 (or IM 459): Computer Game Capstone Project - 3 hrs.
+            </label>
+        </li>
+    </ul>
+</form>
+
+
+<!--<button onclick="checkCompletion()">Check Completion</button> -->
+
+<div class="progress-bar">
+    <div class="progress" style="width: 0;"></div>
+</div>
+<button id="checkCompletionBtn">Check Completion</button>
+</div>
+
+<script>
+		// Get all checkboxes
+		const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+		// Add event listener to each checkbox
+		checkboxes.forEach((checkbox) => {
+			checkbox.addEventListener('change', (event) => {
+				const label = event.target.parentNode;
+				if (event.target.checked) {
+					label.classList.add('checked');
+				} else {
+					label.classList.remove('checked');
+				}
+			});
+		});
+	</script>
 </body>
 </html>
+
